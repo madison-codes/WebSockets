@@ -1,0 +1,25 @@
+{
+  "name": "websockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madison-kerndt/WebSockets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madison-kerndt/WebSockets/issues"
+  },
+  "homepage": "https://github.com/madison-kerndt/WebSockets#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "socket.io": "^1.7.2"
+  }
+}
