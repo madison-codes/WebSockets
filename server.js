@@ -33,8 +33,8 @@ io.on('connection', function (socket) {
   socket.on('message', function (channel, message) {
     if (channel === 'voteCast') {
       votes[socket.id] = message;
-      console.log(votes);
-      socket.emit('voteCount', countVotes(votes));
+      console.log('votes', message);
+      socket.emit('voteCount', countVotes(message));
     }
   });
 
@@ -45,6 +45,8 @@ io.on('connection', function (socket) {
     io.sockets.emit('userConnection', io.engine.clientsCount);
   });
 });
+
+var votes = {};
 
 // write a better version using lodash
 function countVotes(votes) {
@@ -60,7 +62,6 @@ function countVotes(votes) {
   return voteCount;
 }
 
-var votes = {};
 
 
 module.exports = server;

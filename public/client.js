@@ -14,11 +14,10 @@ socket.on('statusMessage', function (message) {
 
 var buttons = document.querySelectorAll('#choices button');
 
-function sendVote() => {
-  socket.send('voteCast', this.innerText);
-}
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', sendVote());
+  buttons[i].addEventListener('click', function () {
+    socket.send('voteCast', this.innerText);
+  });
 }
 
 socket.on('voteCount', function (votes) {
